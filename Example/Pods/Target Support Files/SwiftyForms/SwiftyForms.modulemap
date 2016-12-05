@@ -1,0 +1,6 @@
+framework module SwiftyForms {
+  umbrella header "SwiftyForms-umbrella.h"
+
+  export *
+  module * { export * }
+}

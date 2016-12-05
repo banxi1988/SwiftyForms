@@ -7,6 +7,23 @@
 //
 
 import UIKit
+import SwiftyForms
+
+class LoginForm: BaseForm{
+  
+  let mobileField = TextField(name: "mobile", label: "手机号")
+  let passwordField = PasswordField(
+    name: "password",
+    label: "密码",
+    validators: [.length(min: 6, max: 20, message: nil)]
+  )
+  let remerberField = BooleanField(name:"记住我?")
+  
+  func validate() -> Bool{
+    let fields: [Any] = [mobileField, passwordField, remerberField]
+    return validate(fields: fields)
+  }
+}
 
 class ViewController: UIViewController {
 
